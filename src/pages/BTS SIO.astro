@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+const projects = (await getCollection('work')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+	title="Présentation du BTS SIO | Iliane El amrani"
+	description="Explorez des informations sur le BTS SIO avec les options SLAM & SISR."
+>
+
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+		
+			<h1 style="text-align:center;margin-bottom: 10px;margin-top: 170px;">BTS Services Informatiques aux Organisations (SIO)</h1>
+			<p style="text-align:center; margin-bottom: 210px;">
+				Le BTS Services Informatiques aux Organisations est un diplôme reconnu par l'État au niveau BAC+2. Il a remplacé l'ancien BTS IG (Informatique de gestion) en septembre 2011 pour répondre aux attentes de qualification de l'industrie. Le programme a évolué en fonction du rôle des Technologies de l'Information et de la Communication (TIC) et propose deux spécialisations distinctes : BTS SIO Option SISR et Option SLAM.
+			</p>
+			
+			<div style="border: 1px solid white; text-align:center;">
+			<h3 style="padding: 30px;">Options du BTS SIO</h3>
+			<div style="display:flex; text-align:center;border: 1px solid white;">
+				<div style="border: 1px solid white; margin: 10px;">
+					<h5 style="border: 1px solid white; margin: 30px;padding: 20px;">Option A : SISR - Solutions d'Infrastructures Systèmes et Réseaux</h5>
+					 <p style="padding: 20px;"> La spécialisation SISR du BTS SIO enseigne des compétences liées à l'installation, la configuration et la gestion des équipements informatiques et des réseaux. Cela implique d'intervenir dans la conception, la mise en place, le déploiement et la maintenance des programmes de gestion au sein d'une organisation, avec un accent sur la cybersécurité.</p>
+				</div>
+				<div style="border: 1px solid white; margin: 10px;">
+					<h5 style="border: 1px solid white; margin: 30px;padding: 10px">Option B : SLAM - Solutions <br> Logicielles et Applications Métiers</h5>
+					<p  style="padding: 20px;">La spécialisation SLAM du BTS SIO est davantage axée sur le développement. Elle enseigne comment créer des logiciels, des sites web, des applications mobiles, et aussi comment rédiger une documentation technique. De plus, elle couvre la formation des utilisateurs pour la gestion de la maintenance des applications.</p>
+				</div>
+			</div>
+			
+		</div>
+		<div style="border: 1px solid white; text-align:center;">
+			<h3 style="padding: 10px;">Matières enseignées en BTS SIO</h3>
+			<div style="display:flex; text-align:center;border: 1px solid white;">
+				<div>
+			<h3 style="border: 1px solid white; margin: 10px;padding: 10px;">Première Année</h3>
+			<ul style="text-align:center">
+				<li>Culture Générale & Expression</li>
+				<li>Anglais</li>
+				<li>Mathématiques</li>
+				<li>Algorithmie</li>
+				<li>Analyse économique, managériale et juridiques des services informatiques</li>
+				<li>Enseignements Communs : 4 Modules au 1er semestre et 2 au second</li>
+				<li>Enseignements de spécialité (SLAM ou SISR) : 2 modules uniquement au second semestre</li>
+				<li>Projets Personnels Encadrés (PPE)</li>
+				</div>
+			</ul>
+			<div style="text-align:center;border: 1px solid white;">
+				<h3 style="border: 1px solid white; margin: 10px;padding: 10px; text-align:center">Deuxième Année</h3>
+				<ul	style="text-align:center"
+					<li>Culture Générale & Expression </li>
+					<li>Anglais</li>
+					<li>Mathématiques</li>
+					<li>Analyse économique, managériale et juridiques des services informatiques</li>
+					<li>Enseignements Communs : 1 Module de Gestion de Projet</li>
+					<li>Enseignements de spécialité (SLAM ou SISR) : 3 Modules</li>
+					<li>Projets Personnels Encadrés (PPE)</li>
+				</ul>
+			</div>
+		</div>
+			</div>
+		</div>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+

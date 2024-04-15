@@ -1,0 +1,64 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="box skills">
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Curiosité</h2>
+		<p>Toujours avide de nouvelles connaissances. Je suis constamment à l'affût des dernières technologies et cherche à comprendre en profondeur les concepts techniques pour résoudre les problèmes informatiques de manière efficace.
+		</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Capacité d'apprentissage</h2>
+		<p>Je suis capable de saisir rapidement les nouvelles informations et de les appliquer dans mon travail. Je suis capable d'absorber les connaissances techniques de manière efficace, ce qui me permet de m'adapter rapidement aux nouvelles situations et de résoudre les problèmes informatiques de manière efficace.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Esprit d'équipe</h2>
+		<p>Je suis capable de communiquer clairement, d'écouter les idées des autres et de contribuer de manière positive à la dynamique de l'équipe. Je suis prêt à partager mes connaissances et à collaborer pour atteindre nos objectifs communs.
+		</p>
+	</div>
+</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>

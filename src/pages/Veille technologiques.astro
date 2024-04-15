@@ -1,0 +1,107 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+const projects = (await getCollection('work')).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Veille Technologique | Iliane El amrani"
+  description=""
+>
+  <div class="stack gap-20">
+    <main class="wrapper stack gap-8">
+      
+     
+		<h4 style="text-align:left;margin-top: 50px;">THÈME : SÉCURITÉ DES SYSTEME D'INFORMATION</h4>
+		<p style="text-align:left; margin-bottom: 10px;">
+			La Sécurité Informatique consiste à protéger les ordinateurs, les serveurs, les appareils mobiles, les systèmes électroniques, les réseaux et les données contre les attaques malveillantes.
+On l’appelle également CyberSécurité ou Sécurité des Systèmes d’Information. Vous pouvez la rencontrer dans de nombreux contextes, de l’informatique d’entreprise aux terminaux mobiles.
+Elle peut être divisée en plusieurs catégories (Sécurité des Réseaux, Applications, Informations, Opérationnelle…)
+			<br><br>
+
+
+		<h4 style="text-align:left;">1- QU’EST CE QUE C’EST ?</h4>
+		La sécurité des systèmes d’information c’est l’ensemble des moyens techniques, organisationnels, juridiques et humains nécessaires à la mise en place de moyens visant à empêcher l’utilisation non-autorisée, le mauvais usage, la modification ou le détournement du système d’information 
+		<br>
+		Assurer la sécurité du système d’information est une activité du management du système d’information.
+
+		<img
+		style="border-radius: 8px"
+		width="700"
+		height="700"
+		src="/assets/cadenas.PNG"
+		alt="Jeanine White at work with a colleague"
+	/>
+		<br><br>
+
+		<h4 style="text-align:left;">2- MÉTHODE</h4>
+		
+		<br>
+		Pour surveiller les failles de sécurité, j'utilise une approche ciblée combinant les sites du CERT-FR, IT-CONNECT et LeMagIT.
+		Je sélectionne des sources fiables et diversifiées, surveille activement les mises à jour, analyse de manière critique les informations, partage avec d'autres et reste adaptable dans un environnement en constante évolution.
+		</p>
+		<br><br><br>
+
+		<h4 style="text-align:left;">3- QUELQUES SUJET D'ACTUALITE</h4>
+		<h5 style="text-align:left;">Incident affectant les solutions AnyDesk</h5>
+		<p style="text-align:left;margin-top:-20px;"> DLe 29 janvier 2024 l'ANSSI a été alertée par le BSI que l'éditeur AnyDesk Software GmbH a été victime d'une fuite de données. Le code source des applications développées par l'éditeur ainsi que des certificats et clés privées pourraient avoir été dérobés.
+		<div style="display:flex;">
+			<p>PAR </p>
+			<a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-003/" style="margin: 0px 7px;"> LE CERT-FR </a>
+			<p>Le 5 Février 2024</p>
+		</div>
+
+		<br><br>
+
+		<h5 style="text-align:left;">Vulnérabilité dans Microsoft Outlook</h5>
+		<p style="text-align:left;margin-top:-20px;"> La vulnérabilité CVE-2024-21413 permet à un attaquant de contourner les mesures de sécurité de la suite Office, dont la solution de messagerie Outlook. Plus précisément, son exploitation permet de contourner certaines mesures de sécurité de la suite Office qui empêchent l'accès à une ressource externe sans validation de l'utilisateur.
+		<div style="display:flex;">
+			<p>PAR </p>
+			<a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-005/" style="margin: 0px 7px;"> LE CERT-FR </a>
+			<p>Le 15 Février 2024</p>
+		</div>
+
+		<br><br>
+		
+		<h5 style="text-align:left;">Phishing : Darcula cible Android et l’iPhone par l’intermédiaire de Google Messages et iMessage</h5>
+		<p style="text-align:left;margin-top:-20px;"> Darcula quant à lui s'intéresse plutôt aux utilisateurs de smartphones Android et d'iPhone. Pour cela, des messages malveillants sont envoyés aux utilisateurs directement sur Google Messages (via le protocole RCS) et iMessage.
+		<div style="display:flex;">
+			<p>PAR </p>
+			<a href="https://www.it-connect.fr/phishing-darcula-cible-android-iphone-google-messages-et-imessage/" style="margin: 0px 7px;">IT CONNECT </a>
+			<p>Le 28 Mars 2024</p>
+		</div>
+
+		<br><br>
+
+		<h5 style="text-align:left;">Cyberattaque France Travail : 43 millions de personnes menacées par une fuite de données !</h5>
+		<p style="text-align:left;margin-top:-20px;"> Le 13 mars 2024, France Travail a révélé avoir subi une cyberattaque surs ses systèmes. Grâce à cette intrusion, les pirates sont parvenus à voler une base de données contenant les données personnelles de "potentiellement" 43 millions de personnes.
+		<div style="display:flex;">
+			<p>PAR </p>
+			<a href="https://www.it-connect.fr/cyberattaque-france-travail-mars-2024-fuite-donnees-43-millions-de-personnes/" style="margin: 0px 7px;"> IT CONNECT </a>
+			<p>Le 14 Mars 2024</p>
+		</div>
+
+		<br><br>
+	
+		<h5 style="text-align:left;">Une faille dans Windows SmartScreen exploitée pour déployer le malware DarkGate !</h5>
+		<p style="text-align:left;margin-top:-20px;"> Pour déployer le malware DarkGate, les pirates exploitent une faille de sécurité corrigée en février 2024 par Microsoft. Présente dans la fonctionnalité SmartScreen de Windows Defender, elle permet de contourner les contrôles de sécurité, et donc l'exécution de code malveillant. Voici ce qu'il faut savoir !
+		<div style="display:flex;">
+			<p>PAR </p>
+			<a href="https://www.it-connect.fr/faille-cve-2024-21412-windows-smartscreen-exploitee-deployer-malware-darkgate/" style="margin: 0px 7px;"> IT CONNECT </a>
+			<p>Le 15 Mars 2024</p>
+		</div>
+	
+		<br><br>		
+    </main>
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
